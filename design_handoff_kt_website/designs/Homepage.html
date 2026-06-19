@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kids & Teens Medical Group — Pediatric Care, Simplified</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#F8FAFC;
+    --tint:#fafbfd;
+    --ink:#0c1b2a;
+    --ink-2:#46586a;
+    --ink-3:#6c7d8e;
+    --line:#e6ecf3;
+    --line-2:#eef2f7;
+
+    --blue:#2563EB;
+    --blue-deep:#1D4ED8;
+    --blue-soft:#dbeafe;
+    --blue-tint:#eff4fc;
+    --mint:#16A34A;
+    --mint-soft:#dcfce7;
+    --amber:#F59E0B;
+    --amber-soft:#fef3c7;
+    --violet:#7c5ce0;
+    --violet-soft:#efebfb;
+    --rose:#DC2626;
+    --rose-soft:#fee2e2;
+
+    --r-sm:10px; --r:16px; --r-lg:22px; --r-xl:30px;
+    --sh-sm:0 1px 2px rgba(20,50,90,.05), 0 2px 6px rgba(20,50,90,.05);
+    --sh:0 8px 24px rgba(20,50,90,.08), 0 2px 6px rgba(20,50,90,.05);
+    --sh-lg:0 28px 60px rgba(20,50,90,.14), 0 8px 20px rgba(20,50,90,.07);
+    --maxw:1240px;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --glow:rgba(37,99,235,.28);
+    --glow-strong:rgba(37,99,235,.36);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:"Hanken Grotesk",system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+  button{font-family:inherit;cursor:pointer;border:none;background:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px}
+  h1,h2,h3{line-height:1.04;letter-spacing:-.035em;font-weight:800}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--blue-soft);color:var(--blue);font-weight:700;font-size:13px;padding:7px 14px;border-radius:100px}
+  .eyebrow.plain{background:transparent;padding:0;color:var(--blue)}
+  .eyebrow .d{width:7px;height:7px;border-radius:50%;background:var(--blue)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;font-weight:700;font-size:15px;border-radius:100px;padding:13px 24px;transition:transform .18s var(--ease),box-shadow .18s;white-space:nowrap}
+  .btn svg{width:18px;height:18px}
+  .btn-primary{background-color:var(--blue);color:#fff;box-shadow:0 6px 16px var(--glow)}
+  .btn-primary:hover{background-color:var(--blue-deep);transform:translateY(-2px);box-shadow:0 12px 26px var(--glow-strong)}
+  .btn-ghost{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+  .btn-ghost:hover{box-shadow:inset 0 0 0 1.5px var(--blue);color:var(--blue);transform:translateY(-2px)}
+  .btn-sm{padding:10px 18px;font-size:14px}
+
+  /* ===== UTILITY STRIP ===== */
+  .strip{background:var(--ink);color:#fff;font-size:13.5px;font-weight:600}
+  .strip .wrap{display:flex;align-items:center;justify-content:space-between;height:42px;gap:16px}
+  .strip a{display:inline-flex;align-items:center;gap:7px;opacity:.85;transition:opacity .15s;white-space:nowrap}
+  .strip a:hover{opacity:1}
+  .strip svg{width:15px;height:15px;opacity:.85}
+  .strip .left,.strip .right{display:flex;gap:20px;align-items:center}
+  .strip .sep{width:1px;height:15px;background:rgba(255,255,255,.18)}
+  .lang{display:inline-flex;background:rgba(255,255,255,.12);border-radius:100px;padding:2px;gap:2px}
+  .lang button{color:#fff;font-size:12.5px;font-weight:700;padding:3px 11px;border-radius:100px;opacity:.65}
+  .lang button.on{background:var(--blue);opacity:1}
+
+  /* ===== HEADER ===== */
+  header.site{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.85);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s,box-shadow .2s}
+  header.site.scrolled{border-color:var(--line-2);box-shadow:var(--sh-sm)}
+  .nav{display:flex;align-items:center;gap:24px;height:74px}
+  .logo{display:flex;align-items:center;gap:11px;flex-shrink:0;white-space:nowrap}
+  .logo .m{width:40px;height:40px;border-radius:12px;background:var(--blue);display:grid;place-items:center;color:#fff;font-weight:800;font-size:16px;flex-shrink:0}
+  .logo b{font-weight:800;font-size:19px;letter-spacing:-.02em}
+  .logo small{display:block;font-size:11px;font-weight:600;color:var(--ink-3);margin-top:-3px;letter-spacing:0}
+  .nav-links{display:flex;align-items:center;gap:2px;margin-left:8px;list-style:none}
+  .nav-links > li{position:relative}
+  .nav-links > li > a,.nav-links > li > button{display:inline-flex;align-items:center;gap:5px;font-weight:600;font-size:15px;color:var(--ink);padding:10px 14px;border-radius:10px;transition:background .15s,color .15s;white-space:nowrap}
+  .nav-links > li > a:hover,.nav-links > li > button:hover{background:var(--blue-tint);color:var(--blue)}
+  .nav-links .chev{width:14px;height:14px;color:var(--ink-3);transition:transform .2s}
+  .nav-links li.open .chev{transform:rotate(180deg)}
+  .nav-cta{margin-left:auto;display:flex;align-items:center;gap:10px}
+
+  .mega{position:absolute;top:calc(100% + 12px);left:50%;transform:translateX(-50%) translateY(8px);background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);box-shadow:var(--sh-lg);padding:18px;opacity:0;visibility:hidden;transition:opacity .2s var(--ease),transform .2s var(--ease);z-index:80}
+  .nav-links li.open .mega{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .mega::before{content:"";position:absolute;top:-7px;left:50%;transform:translateX(-50%) rotate(45deg);width:14px;height:14px;background:#fff;border-left:1px solid var(--line);border-top:1px solid var(--line);border-radius:3px 0 0 0}
+  .mega-care{width:560px;display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .mega-item{display:flex;gap:13px;padding:13px;border-radius:14px;transition:background .15s}
+  .mega-item:hover{background:var(--blue-tint)}
+  .mega-item .ico{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex-shrink:0}
+  .mega-item .ico svg{width:21px;height:21px}
+  .mega-item h4{font-size:15px;font-weight:700;margin-bottom:2px;letter-spacing:-.01em}
+  .mega-item p{font-size:12.5px;color:var(--ink-3);font-weight:500;line-height:1.4}
+  .mega-svc{width:680px;display:grid;grid-template-columns:repeat(3,1fr);gap:0 16px}
+  .mega-svc .ch{font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);padding:8px 10px 5px;grid-column:1/-1}
+  .mega-svc a{font-size:14px;font-weight:600;color:var(--ink-2);padding:8px 10px;border-radius:9px;transition:background .12s,color .12s}
+  .mega-svc a:hover{background:var(--blue-soft);color:var(--blue)}
+  .mega-foot{grid-column:1/-1;margin-top:8px;padding-top:12px;border-top:1px solid var(--line-2);display:flex;justify-content:space-between;align-items:center}
+  .mega-foot span{font-size:13px;color:var(--ink-3);font-weight:600}
+  .mega-foot a{font-weight:700;color:var(--blue);font-size:14px}
+
+  .burger{display:none;width:46px;height:46px;border-radius:13px;align-items:center;justify-content:center;background:#fff;box-shadow:inset 0 0 0 1.5px var(--line)}
+  .burger svg{width:22px;height:22px}
+
+  /* ===== HERO ===== */
+  .hero .wrap{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center;padding-top:60px;padding-bottom:64px}
+  .hero h1{font-size:clamp(40px,5.2vw,64px);margin:22px 0 0}
+  .hero .lede{font-size:19px;line-height:1.5;color:var(--ink-2);font-weight:500;margin-top:20px;max-width:36ch}
+  .hero-cta{display:flex;gap:12px;margin-top:30px;flex-wrap:wrap}
+  .hero-trust{display:flex;gap:28px;margin-top:38px;flex-wrap:wrap;align-items:center}
+  .hero-trust .t b{font-size:26px;font-weight:800;letter-spacing:-.02em;display:block;white-space:nowrap}
+  .hero-trust .t span{font-size:13.5px;color:var(--ink-3);font-weight:600}
+  .hero-trust .sep{width:1px;height:34px;background:var(--line)}
+
+  .visual{position:relative;height:540px;border-radius:var(--r-xl);background:linear-gradient(155deg,#dbe9ff,#eaf1fe 55%,#e7f7f1);overflow:hidden;box-shadow:var(--sh)}
+  .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+  .float,.bcard{z-index:2}
+  .photochip{position:absolute;top:18px;left:18px;background:rgba(255,255,255,.8);backdrop-filter:blur(6px);color:var(--ink-2);font-size:12px;font-weight:700;padding:6px 13px;border-radius:100px}
+  .float{position:absolute;top:30px;right:24px;background:#fff;border-radius:16px;padding:13px 16px;box-shadow:var(--sh);display:flex;align-items:center;gap:11px}
+  .float .av{display:flex}
+  .float .av span{width:28px;height:28px;border-radius:50%;border:2px solid #fff;margin-left:-9px;background:#e6ecf3;overflow:hidden}
+  .float .av span img{width:100%;height:100%;object-fit:cover;display:block}
+  .float b{font-size:14px;font-weight:800;display:block;line-height:1.1}
+  .float small{font-size:11px;color:var(--ink-3);font-weight:600}
+  .bcard{position:absolute;left:26px;right:26px;bottom:26px;background:#fff;border-radius:20px;padding:20px;box-shadow:var(--sh-lg)}
+  .bcard .row{display:flex;align-items:center;gap:10px}
+  .bcard .dotg{width:9px;height:9px;border-radius:50%;background:var(--mint);box-shadow:0 0 0 4px var(--mint-soft)}
+  .bcard .lab{font-size:12px;font-weight:800;letter-spacing:.06em;color:var(--ink-3)}
+  .bcard h4{font-size:22px;font-weight:800;letter-spacing:-.02em;margin:10px 0 14px}
+  .bcard .slots{display:flex;gap:8px}
+  .bcard .slot{flex:1;text-align:center;border:1.5px solid var(--line);border-radius:12px;padding:11px 0;font-size:14px;font-weight:700;cursor:pointer;transition:border-color .15s,background .15s,color .15s}
+  .bcard .slot:hover{border-color:var(--blue)}
+  .bcard .slot.on{background:var(--blue);color:#fff;border-color:var(--blue)}
+
+  /* color helpers */
+  .c-blue{background:var(--blue-soft);color:var(--blue-deep)}
+  .c-mint{background:var(--mint-soft);color:#0c8f63}
+  .c-amber{background:var(--amber-soft);color:#b96a1e}
+  .c-violet{background:var(--violet-soft);color:#5d3fc0}
+  .c-rose{background:var(--rose-soft);color:#c43a5c}
+
+  /* ===== QUICK ACTIONS ===== */
+  .quick{padding-bottom:20px}
+  .quick-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .qcard{background:#fff;border:1px solid var(--line-2);border-radius:var(--r-lg);padding:24px;display:flex;flex-direction:column;gap:13px;box-shadow:var(--sh-sm);transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+  .qcard:hover{transform:translateY(-5px);box-shadow:var(--sh)}
+  .qcard .ico{width:50px;height:50px;border-radius:14px;display:grid;place-items:center}
+  .qcard .ico svg{width:25px;height:25px}
+  .qcard h3{font-size:20px;letter-spacing:-.02em}
+  .qcard p{font-size:14.5px;color:var(--ink-2);font-weight:500;flex:1}
+  .qcard .go{font-weight:700;font-size:14.5px;color:var(--blue);display:inline-flex;align-items:center;gap:7px}
+  .qcard .go svg{width:16px;height:16px;transition:transform .2s}
+  .qcard:hover .go svg{transform:translateX(4px)}
+
+  /* ===== SECTION SCAFFOLD ===== */
+  section.block{padding:88px 0}
+  .sec-head{max-width:660px}
+  .sec-head.center{margin:0 auto;text-align:center}
+  .sec-head h2{font-size:clamp(32px,4vw,48px);margin:14px 0 0}
+  .sec-head p{font-size:18px;color:var(--ink-2);font-weight:500;margin-top:14px}
+
+  @media(max-width:980px){
+    .hero .wrap{grid-template-columns:1fr;gap:36px}
+    .visual{max-width:520px;width:100%;margin:0 auto}
+    .quick-grid{grid-template-columns:1fr}
+    .mega{display:none}
+  }
+  @media(max-width:860px){
+    .nav-links,.strip .left .hide{display:none}
+    .burger{display:flex}
+    .nav-cta .hide{display:none}
+  }
+  @media(max-width:560px){
+    .wrap{padding:0 18px}
+    .strip .left{gap:14px}
+    .hero-trust{gap:18px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== UTILITY STRIP ===== -->
+<div class="strip">
+  <div class="wrap">
+    <div class="left">
+      <a href="tel:+18183615437"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(818) 361-5437</a>
+      <span class="sep hide"></span>
+      <a class="hide" href="sms:+16262987121"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>Text us, 7 days a week</a>
+    </div>
+    <div class="right">
+      <a class="hide" href="#">Patient Portal</a>
+      <span class="sep hide"></span>
+      <a class="hide" href="#">Pay Online</a>
+      <div class="lang" role="group" aria-label="Language"><button class="on">EN</button><button>ES</button></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== HEADER ===== -->
+<header class="site" id="hdr">
+  <div class="wrap">
+    <nav class="nav">
+      <a class="logo" href="#top"><span class="m">K&amp;T</span><span><b>Kids &amp; Teens</b><small>Medical Group · Los Angeles</small></span></a>
+      <ul class="nav-links" id="navlinks">
+        <li data-mega="care">
+          <button>Care <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="mega mega-care">
+            <a class="mega-item" href="#care"><span class="ico c-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg></span><span><h4>Primary Care</h4><p>Well & sick visits, ages 0–21</p></span></a>
+            <a class="mega-item" href="#care"><span class="ico c-rose"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg></span><span><h4>Urgent Care</h4><p>Immediate booking, less waiting</p></span></a>
+            <a class="mega-item" href="#care"><span class="ico c-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="15" height="16" rx="2"/><path d="m17 9 5-3v12l-5-3"/></svg></span><span><h4>Telehealth</h4><p>Video visits, evenings too</p></span></a>
+            <a class="mega-item" href="#care"><span class="ico c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><h4>After-Hours Care</h4><p>Evening & weekend hours</p></span></a>
+            <a class="mega-item" href="#care"><span class="ico c-violet"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></span><span><h4>Family Practice</h4><p>Care for the whole family</p></span></a>
+            <a class="mega-item" href="#care"><span class="ico c-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/></svg></span><span><h4>Newborn & Delivery</h4><p>First visit at your hospital</p></span></a>
+          </div>
+        </li>
+        <li data-mega="svc">
+          <button>Services <svg class="chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m6 9 6 6 6-6"/></svg></button>
+          <div class="mega mega-svc">
+            <span class="ch">Everyday Care</span>
+            <a href="#services">Well Child Exam</a><a href="#services">Sick Visit</a><a href="#services">Walk-Ins</a>
+            <a href="#services">Same-Day Visit</a><a href="#services">Physicals</a><a href="#services">Nutrition</a>
+            <span class="ch">Specialties</span>
+            <a href="#services">ADHD & Behavioral</a><a href="#services">Asthma & Allergy</a><a href="#services">Autism & Special Needs</a>
+            <a href="#services">Adolescent Medicine</a><a href="#services">Teen Gynecology</a><a href="#services">Sports Injuries</a>
+            <span class="ch">Prevention & More</span>
+            <a href="#services">Free Vaccines</a><a href="#services">COVID-19 Vaccine</a><a href="#services">Newborn Care</a>
+            <a href="#services">Infectious Disease</a><a href="#services">Weight Management</a><a href="#services">Expectant Parents</a>
+            <div class="mega-foot"><span>20 specialties under one network</span><a href="#services">View all services →</a></div>
+          </div>
+        </li>
+        <li><a href="#locations">Locations</a></li>
+        <li><a href="#providers">Find a Doctor</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a class="btn btn-ghost btn-sm hide" href="#providers">Find a Doctor</a>
+        <a class="btn btn-primary btn-sm" href="#book">Book Now</a>
+        <button class="burger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<a id="top"></a>
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="eyebrow"><span class="d"></span>Pediatric care, simplified</span>
+      <h1>Healthcare your kids actually look forward to.</h1>
+      <p class="lede">Same-day visits, telehealth, and 25 clinics across Los Angeles — built around how your family really lives.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#book"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Book a visit</a>
+        <a class="btn btn-ghost" href="#locations"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Find a clinic</a>
+      </div>
+      <div class="hero-trust">
+        <div class="t"><b>25</b><span>LA clinics</span></div>
+        <div class="sep"></div>
+        <div class="t"><b>0–21</b><span>Every age</span></div>
+        <div class="sep"></div>
+        <div class="t"><b>18+ yrs</b><span>Of care</span></div>
+        <div class="sep"></div>
+        <div class="t"><b>4.9★</b><span>4,000+ reviews</span></div>
+      </div>
+    </div>
+    <div class="visual">
+      <img class="hero-img" src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?w=1000&h=1100&fit=crop&q=70" alt="Pediatrician caring for a child at Kids & Teens Medical Group" />
+      <span class="hero-overlay"></span>
+      <div class="float"><span class="av"><span><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=faces&q=70" alt="" /></span><span><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=faces&q=70" alt="" /></span><span><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=faces&q=70" alt="" /></span></span><span><b>4,000+</b><small>5-star reviews</small></span></div>
+      <div class="bcard">
+        <div class="row"><span class="dotg"></span><span class="lab">NEXT AVAILABLE · TARZANA</span></div>
+        <h4>Today, 2:40 PM</h4>
+        <div class="slots"><span class="slot">1:20</span><span class="slot on">2:40</span><span class="slot">3:10</span><span class="slot">4:30</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUICK ACTIONS ===== -->
+<div class="quick">
+  <div class="wrap">
+    <div class="quick-grid">
+      <a class="qcard" href="#book">
+        <span class="ico c-blue"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M9 16l2 2 4-4"/></svg></span>
+        <h3>Book an Appointment</h3>
+        <p>New & returning patients can book a same-day visit online in under a minute.</p>
+        <span class="go">Book now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="qcard" href="#providers">
+        <span class="ico c-mint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span>
+        <h3>Find a Doctor</h3>
+        <p>Choose the right pediatrician for your family from our trusted medical team.</p>
+        <span class="go">See providers <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="qcard" href="#locations">
+        <span class="ico c-amber"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span>
+        <h3>Find a Clinic</h3>
+        <p>25 locations across LA with addresses, hours, and contact details.</p>
+        <span class="go">View locations <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== CARE ===== -->
+<section class="block" id="care">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow plain" style="justify-content:center">Ways to get care</span>
+      <h2>Care that fits your family's day</h2>
+      <p>From a sniffle to a sports injury — in person or on video, there's a fast, convenient way to see a pediatrician.</p>
+    </div>
+    <div class="care-grid" id="careGrid"></div>
+  </div>
+</section>
+
+<!-- ===== LOCATIONS ===== -->
+<section class="block" id="locations" style="background:var(--tint)">
+  <div class="wrap">
+    <div class="loc-layout">
+      <div class="loc-left">
+        <span class="eyebrow plain">25 clinics across LA</span>
+        <h2 style="font-size:clamp(32px,4vw,48px);margin:14px 0 16px">A clinic in your neighborhood</h2>
+        <p style="font-size:18px;color:var(--ink-2);font-weight:500;margin-bottom:24px">From the Valley to the South Bay, quality pediatric care is always close to home. Search to find your nearest location.</p>
+        <div class="loc-search">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+          <input id="locInput" type="text" placeholder="Search by city or neighborhood…" />
+        </div>
+        <div class="map-tile"><iframe src="https://www.google.com/maps?q=Los+Angeles,CA&z=10&output=embed" loading="lazy" title="Map of Los Angeles clinic locations" referrerpolicy="no-referrer-when-downgrade"></iframe><span class="photochip">25 LA clinics</span></div>
+      </div>
+      <div class="loc-right">
+        <div class="loc-head"><b id="locCount">25</b> locations</div>
+        <div class="loc-list" id="locList"></div>
+        <a class="btn btn-primary" style="width:100%;margin-top:14px" href="#book">Book a visit</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="block" id="services">
+  <div class="wrap">
+    <div class="sec-head" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none;gap:24px;flex-wrap:wrap">
+      <div style="max-width:560px">
+        <span class="eyebrow plain">20 specialties</span>
+        <h2 style="font-size:clamp(32px,4vw,48px);margin:14px 0 0">Comprehensive pediatric services</h2>
+      </div>
+      <p style="font-size:17px;color:var(--ink-2);font-weight:500;max-width:36ch">One network, every kind of care your child might need — from everyday checkups to focused specialties.</p>
+    </div>
+    <div class="svc-grid" id="svcGrid"></div>
+  </div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section class="block" style="background:var(--blue-tint)">
+  <div class="wrap">
+    <div class="why-grid">
+      <div class="why-copy">
+        <span class="eyebrow plain">Why families choose us</span>
+        <h2 style="font-size:clamp(32px,4vw,48px);margin:14px 0 18px">Changing the way you think about children's health</h2>
+        <p style="font-size:18px;color:var(--ink-2);font-weight:500;margin-bottom:26px">For 18 years, Kids &amp; Teens Medical Group has been Southern California's leading provider of pediatric care with extended hours — built around your family's schedule.</p>
+        <div class="why-points">
+          <div class="wp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Same-day & walk-in appointments</div>
+          <div class="wp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Evening, weekend & telehealth hours</div>
+          <div class="wp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>Bilingual care, English & Español</div>
+          <div class="wp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg>All major insurance accepted</div>
+        </div>
+      </div>
+      <div class="why-stats" id="whyStats"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESOURCES ===== -->
+<section class="block" id="resources">
+  <div class="wrap">
+    <div class="sec-head center">
+      <span class="eyebrow plain" style="justify-content:center">Everything in one place</span>
+      <h2>Patient resources</h2>
+      <p>Portals, forms, schedules, and answers — no more hunting across the site.</p>
+    </div>
+    <div class="res-grid" id="resGrid"></div>
+  </div>
+</section>
+
+<!-- ===== PARTNERS ===== -->
+<section class="partners">
+  <div class="wrap">
+    <p class="plabel">Trusted partners &amp; affiliations</p>
+    <div class="prow">
+      <span>Children's Hospital LA</span><span>Cedars-Sinai</span><span>LA Care</span><span>Optum</span><span>Molina Healthcare</span><span>Regal Medical</span><span>Providence LA</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STORIES ===== -->
+<section class="block" id="about">
+  <div class="wrap">
+    <div class="sec-head" style="display:flex;justify-content:space-between;align-items:flex-end;max-width:none;gap:24px;flex-wrap:wrap">
+      <div style="max-width:560px"><span class="eyebrow plain">Parent resources & news</span><h2 style="font-size:clamp(32px,4vw,46px);margin:14px 0 0">Featured stories</h2></div>
+      <a class="btn btn-ghost btn-sm" href="#">View all articles →</a>
+    </div>
+    <div class="story-grid" id="storyGrid"></div>
+  </div>
+</section>
+
+<!-- ===== TESTIMONIAL ===== -->
+<section class="block" style="background:var(--tint);padding-top:64px;padding-bottom:64px">
+  <div class="wrap">
+    <div class="testi">
+      <div class="stars">★★★★★</div>
+      <p>“The doctors actually listen, the wait is short, and there's always a clinic close by when my kids get sick. After 6 years I wouldn't take them anywhere else.”</p>
+      <div class="by"><span class="av"><img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=120&h=120&fit=crop&crop=faces&q=70" alt="" /></span><span><b>A Kids &amp; Teens parent</b><br/><span class="muted">Los Angeles, CA</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta" id="book">
+  <div class="wrap">
+    <div class="cta-inner">
+      <div>
+        <h2>Ready to book a same-day visit?</h2>
+        <p>New & returning patients can book online in under a minute — or reach us by phone or text, in English or Español.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-light" href="#"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>Book Online</a>
+        <a class="btn btn-outline" href="tel:+18183615437"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (818) 361-5437</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <a class="logo" href="#top"><span class="m">K&amp;T</span><span><b style="color:#fff">Kids &amp; Teens</b><small style="color:rgba(255,255,255,.5)">Medical Group · Los Angeles</small></span></a>
+        <p>The leading provider of pediatric care with extended hours in Southern California. Changing the way you think about children's health.</p>
+        <div class="socials">
+          <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v7h3v-7h2.5l.5-3H14V9z"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 3h3l-7 8 8 10h-6l-5-6-5 6H3l8-9L3 3h6l4 5 5-5z"/></svg></a>
+          <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12c0-3-.3-4-1-4.7-.6-.6-2-1-9-1s-8.4.4-9 1c-.7.7-1 1.7-1 4.7s.3 4 1 4.7c.6.6 2 1 9 1s8.4-.4 9-1c.7-.7 1-1.7 1-4.7zM10 15V9l5 3-5 3z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-cols">
+        <div class="fc"><h5>Care</h5><a href="#care">Primary Care</a><a href="#care">Urgent Care</a><a href="#care">Telehealth</a><a href="#care">After-Hours</a><a href="#care">Family Practice</a></div>
+        <div class="fc"><h5>For Patients</h5><a href="#book">Book Appointment</a><a href="#providers">Find a Doctor</a><a href="#locations">Locations</a><a href="#services">Services</a><a href="#resources">Insurance</a></div>
+        <div class="fc"><h5>Resources</h5><a href="#resources">Patient Portal</a><a href="#resources">Pay Online</a><a href="#resources">Forms & Refills</a><a href="#resources">Vaccine Schedule</a><a href="#">Testimonials</a></div>
+        <div class="fc"><h5>Company</h5><a href="#about">About Us</a><a href="#">Careers</a><a href="#">Directory</a><a href="#">Terms</a><a href="#">Privacy</a></div>
+      </div>
+    </div>
+    <div class="foot-contact">
+      <a href="tel:+18183615437"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2A19.79 19.79 0 0 1 3 5.18 2 2 0 0 1 5 3h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call (818) 361-5437</a>
+      <a href="sms:+16262987121"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>Text English (626) 298-7121</a>
+      <a href="sms:+18184235637"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>Texto Español (818) 423-5637</a>
+    </div>
+    <div class="foot-base"><span>© 2026 Kids &amp; Teens Medical Group. All rights reserved.</span><span>Janesri De Silva MD, A Prof Corp.</span></div>
+  </div>
+</footer>
+
+<!-- ===== BOOKING MODAL (healow Open Access handoff) ===== -->
+<div class="bk-scrim" id="bkScrim">
+  <div class="bk" role="dialog" aria-modal="true" aria-label="Book an appointment">
+    <div id="bkForm">
+      <div class="bk-head">
+        <button class="x" id="bkClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+        <h3>Book an appointment</h3>
+        <span class="bk-powered">Online scheduling <span class="hl">healow Open Access®</span></span>
+      </div>
+      <div class="bk-body">
+        <div class="bk-field">
+          <label>Who is this visit for?</label>
+          <div class="seg" id="bkPatient"><button class="on" data-v="New patient">New patient</button><button data-v="Returning patient">Returning patient</button></div>
+        </div>
+        <div class="bk-field">
+          <label for="bkReason">Reason for visit</label>
+          <select id="bkReason"></select>
+        </div>
+        <div class="bk-field">
+          <label for="bkLoc">Clinic location</label>
+          <select id="bkLoc"></select>
+        </div>
+        <div class="bk-field">
+          <label>Preferred day</label>
+          <div class="chips" id="bkDay"><span class="chip2 on" data-v="Today">Today</span><span class="chip2" data-v="Tomorrow">Tomorrow</span><span class="chip2" data-v="This week">This week</span><span class="chip2" data-v="Next week">Next week</span></div>
+        </div>
+        <div class="bk-field">
+          <label>Available times</label>
+          <div class="bk-slots" id="bkSlots"></div>
+        </div>
+        <div class="bk-row">
+          <div class="bk-field"><label for="bkName">Child's first name</label><input id="bkName" type="text" placeholder="First name" /></div>
+          <div class="bk-field"><label for="bkDob">Date of birth</label><input id="bkDob" type="text" placeholder="MM / DD / YYYY" /></div>
+        </div>
+      </div>
+      <div class="bk-foot">
+        <span class="bk-secure"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>HIPAA-secure · finalized in healow</span>
+        <button class="btn btn-primary" id="bkSubmit">Continue <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+    <div class="bk-confirm" id="bkDone" style="display:none">
+      <div class="seal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 6 9 17l-5-5"/></svg></div>
+      <h3>Almost done!</h3>
+      <p>Here's your appointment request. Finalize and confirm securely in the healow scheduler.</p>
+      <div class="bk-summary" id="bkSummary"></div>
+      <div class="actions">
+        <a class="btn btn-primary" id="bkGo" href="#" target="_blank" rel="noopener">Open healow to confirm <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M7 17 17 7M7 7h10v10"/></svg></a>
+        <button class="btn btn-ghost" id="bkBack">Edit details</button>
+      </div>
+      <div class="bk-deeplink" id="bkLink"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== MOBILE NAV ===== -->
+<div class="mscrim" id="mscrim"></div>
+<aside class="mnav" id="mnav">
+  <div class="mnav-head"><a class="logo" href="#top"><span class="m">K&amp;T</span><b>Kids &amp; Teens</b></a><button class="burger" id="mclose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6 6 18M6 6l12 12"/></svg></button></div>
+  <nav class="mnav-links"><a href="#care">Care</a><a href="#services">Services</a><a href="#locations">Locations</a><a href="#providers">Find a Doctor</a><a href="#resources">Resources</a><a href="#about">About</a></nav>
+  <div class="mnav-cta"><a class="btn btn-primary" href="#book">Book Now</a><a class="btn btn-ghost" href="tel:+18183615437">Call Us</a></div>
+</aside>
+
+<style>
+  /* CARE */
+  .care-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px}
+  .care-card{background:#fff;border:1px solid var(--line-2);border-radius:var(--r-lg);padding:26px;box-shadow:var(--sh-sm);transition:transform .2s var(--ease),box-shadow .2s var(--ease);position:relative}
+  .care-card:hover{transform:translateY(-5px);box-shadow:var(--sh)}
+  .care-card .chip{position:absolute;top:24px;right:24px;font-size:11.5px;font-weight:700;padding:5px 11px;border-radius:100px}
+  .care-card .ico{width:52px;height:52px;border-radius:15px;display:grid;place-items:center;margin-bottom:18px}
+  .care-card .ico svg{width:26px;height:26px}
+  .care-card h3{font-size:21px;letter-spacing:-.02em;margin-bottom:8px}
+  .care-card p{font-size:14.5px;color:var(--ink-2);font-weight:500;min-height:64px}
+  .care-meta{list-style:none;margin:14px 0 18px;display:flex;flex-direction:column;gap:7px}
+  .care-meta li{display:flex;align-items:center;gap:9px;font-size:13.5px;font-weight:600;color:var(--ink-2)}
+  .care-meta svg{width:16px;height:16px;color:var(--blue);flex-shrink:0}
+  .care-link{font-weight:700;font-size:15px;color:var(--blue);display:inline-flex;align-items:center;gap:7px}
+  .care-link svg{width:16px;height:16px;transition:transform .2s}
+  .care-card:hover .care-link svg{transform:translateX(4px)}
+
+  /* LOCATIONS */
+  .loc-layout{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+  .loc-search{display:flex;align-items:center;gap:10px;background:#fff;border:1.6px solid var(--line);border-radius:100px;padding:4px 4px 4px 18px;transition:border-color .15s,box-shadow .15s}
+  .loc-search:focus-within{border-color:var(--blue);box-shadow:0 0 0 4px var(--blue-soft)}
+  .loc-search svg{width:20px;height:20px;color:var(--ink-3);flex-shrink:0}
+  .loc-search input{border:none;outline:none;flex:1;font-family:inherit;font-size:15.5px;font-weight:500;padding:12px 0;background:transparent;color:var(--ink)}
+  .map-tile{position:relative;margin-top:20px;height:300px;border-radius:var(--r-lg);background:linear-gradient(155deg,#dbe9ff,#e7f7f1);box-shadow:var(--sh-sm);overflow:hidden}
+  .map-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .map-tile iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .loc-head{font-size:14px;font-weight:600;color:var(--ink-3);margin-bottom:12px}
+  .loc-head b{color:var(--ink);font-weight:800}
+  .loc-list{display:flex;flex-direction:column;gap:9px;max-height:520px;overflow:auto;padding-right:6px}
+  .loc-item{display:flex;align-items:center;gap:14px;background:#fff;border:1px solid var(--line-2);border-radius:var(--r);padding:13px 16px;transition:border-color .15s,transform .15s,box-shadow .15s}
+  .loc-item:hover{border-color:var(--blue);transform:translateX(3px);box-shadow:var(--sh-sm)}
+  .loc-item .pin{width:40px;height:40px;border-radius:11px;background:var(--blue-soft);color:var(--blue-deep);display:grid;place-items:center;flex-shrink:0}
+  .loc-item .pin svg{width:19px;height:19px}
+  .loc-item h4{font-size:15.5px;font-weight:700}
+  .loc-item p{font-size:13px;color:var(--ink-3);font-weight:500}
+  .loc-item .arr{margin-left:auto;color:var(--ink-3)}
+  .loc-item .arr svg{width:18px;height:18px}
+  .loc-empty{padding:24px;text-align:center;color:var(--ink-3);font-weight:600}
+
+  /* SERVICES */
+  .svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:46px}
+  .svc-chip{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line-2);border-radius:14px;padding:15px 17px;font-weight:600;font-size:15px;box-shadow:var(--sh-sm);transition:transform .16s,box-shadow .16s,border-color .16s}
+  .svc-chip:hover{transform:translateY(-3px);box-shadow:var(--sh);border-color:var(--blue)}
+  .svc-chip .dot{width:10px;height:10px;border-radius:50%;flex-shrink:0}
+
+  /* WHY */
+  .why-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:54px;align-items:center}
+  .why-points{display:flex;flex-direction:column;gap:13px}
+  .wp{display:flex;align-items:center;gap:12px;font-size:16px;font-weight:600;color:var(--ink)}
+  .wp svg{width:23px;height:23px;background:var(--blue);color:#fff;border-radius:50%;padding:4px;flex-shrink:0}
+  .why-stats{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .why-stat{background:#fff;border:1px solid var(--line-2);border-radius:var(--r-lg);padding:28px;box-shadow:var(--sh-sm)}
+  .why-stat b{font-size:clamp(40px,4.4vw,52px);font-weight:800;letter-spacing:-.03em;line-height:.9;display:block;color:var(--blue)}
+  .why-stat span{font-size:14px;color:var(--ink-2);font-weight:600;margin-top:10px;display:block}
+
+  /* RESOURCES */
+  .res-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:46px}
+  .res-card{background:#fff;border:1px solid var(--line-2);border-radius:var(--r);padding:22px;display:flex;flex-direction:column;gap:12px;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+  .res-card:hover{transform:translateY(-4px);box-shadow:var(--sh)}
+  .res-card .ico{width:46px;height:46px;border-radius:13px;display:grid;place-items:center}
+  .res-card .ico svg{width:23px;height:23px}
+  .res-card h4{font-size:16px;font-weight:700;letter-spacing:-.01em}
+  .res-card p{font-size:13px;color:var(--ink-3);font-weight:500;margin-top:-4px}
+
+  /* PARTNERS */
+  .partners{padding:38px 0;border-top:1px solid var(--line-2);border-bottom:1px solid var(--line-2)}
+  .plabel{text-align:center;font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:20px}
+  .prow{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 30px}
+  .prow span{font-weight:800;font-size:17px;color:var(--ink-3);letter-spacing:-.01em;opacity:.66;transition:opacity .2s,color .2s;cursor:default}
+  .prow span:hover{opacity:1;color:var(--blue)}
+
+  /* STORIES */
+  .story-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:48px}
+  .story-card{background:#fff;border:1px solid var(--line-2);border-radius:var(--r-lg);overflow:hidden;transition:transform .2s var(--ease),box-shadow .2s var(--ease)}
+  .story-card:hover{transform:translateY(-5px);box-shadow:var(--sh-lg)}
+  .story-img{position:relative;aspect-ratio:16/10}
+  .story-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+  .story-img .photochip{top:14px;left:14px}
+  .sbody{padding:18px 18px 22px}
+  .sbody .tag{font-size:11.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--blue)}
+  .sbody h3{font-size:17px;line-height:1.26;letter-spacing:-.015em;margin:9px 0 12px;font-weight:700}
+  .sbody .date{font-size:13px;color:var(--ink-3);font-weight:600}
+
+  /* TESTIMONIAL */
+  .testi{max-width:820px;margin:0 auto;text-align:center}
+  .testi .stars{color:#f5a623;font-size:20px;letter-spacing:4px}
+  .testi p{font-size:clamp(22px,2.8vw,30px);font-weight:700;letter-spacing:-.025em;line-height:1.32;margin:18px 0 24px}
+  .testi .by{display:inline-flex;align-items:center;gap:13px}
+  .testi .av{width:50px;height:50px;border-radius:50%;background:#e6ecf3;flex-shrink:0;overflow:hidden}
+  .testi .av img{width:100%;height:100%;object-fit:cover;display:block}
+  .testi .by b{font-size:15px}
+  .testi .muted{color:var(--ink-3);font-weight:600;font-size:13px}
+
+  /* CTA */
+  .cta{background:linear-gradient(135deg,var(--blue),var(--blue-deep));padding:72px 0}
+  .cta-inner{display:flex;align-items:center;justify-content:space-between;gap:36px;flex-wrap:wrap}
+  .cta h2{color:#fff;font-size:clamp(28px,3.4vw,42px)}
+  .cta p{color:rgba(255,255,255,.86);font-size:18px;font-weight:500;margin-top:12px;max-width:46ch}
+  .cta-actions{display:flex;gap:12px;flex-wrap:wrap}
+  .btn-light{background:#fff;color:var(--blue-deep)}
+  .btn-light:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.18)}
+  .btn-outline{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.6px rgba(255,255,255,.45)}
+  .btn-outline:hover{background:rgba(255,255,255,.12);transform:translateY(-2px)}
+
+  /* FOOTER */
+  .foot{background:var(--ink);color:rgba(255,255,255,.7);padding:64px 0 30px}
+  .foot-top{display:grid;grid-template-columns:1.3fr 2fr;gap:48px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-brand p{font-size:14.5px;line-height:1.6;margin:18px 0 20px;font-weight:500;max-width:38ch}
+  .foot .logo .m{background:#fff;color:var(--blue)}
+  .socials{display:flex;gap:10px}
+  .socials a{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center;color:#fff;transition:background .15s,transform .15s}
+  .socials a:hover{background:var(--blue);transform:translateY(-3px)}
+  .socials svg{width:19px;height:19px}
+  .foot-cols{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .fc h5{font-size:12.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin-bottom:14px}
+  .fc a{display:block;font-size:14.5px;font-weight:500;padding:6px 0;transition:color .15s}
+  .fc a:hover{color:#fff}
+  .foot-contact{display:flex;gap:28px;flex-wrap:wrap;padding:26px 0;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-contact a{display:inline-flex;align-items:center;gap:9px;font-weight:600;font-size:14.5px;color:#fff}
+  .foot-contact svg{width:18px;height:18px;color:var(--mint)}
+  .foot-base{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;padding-top:24px;font-size:13px;font-weight:500}
+
+  /* ===== BOOKING MODAL ===== */
+  .bk-scrim{position:fixed;inset:0;background:rgba(12,27,42,.55);backdrop-filter:blur(4px);z-index:100;opacity:0;visibility:hidden;transition:opacity .25s;display:grid;place-items:center;padding:24px}
+  .bk-scrim.on{opacity:1;visibility:visible}
+  .bk{width:min(560px,100%);max-height:92vh;overflow:auto;background:#fff;border-radius:var(--r-xl);box-shadow:var(--sh-lg);transform:translateY(14px) scale(.98);transition:transform .28s var(--ease);position:relative}
+  .bk-scrim.on .bk{transform:none}
+  .bk-head{position:sticky;top:0;background:#fff;border-bottom:1px solid var(--line-2);padding:22px 26px 18px;border-radius:var(--r-xl) var(--r-xl) 0 0;z-index:2}
+  .bk-head .x{position:absolute;top:18px;right:18px;width:38px;height:38px;border-radius:11px;display:grid;place-items:center;background:var(--tint);color:var(--ink-2);transition:background .15s}
+  .bk-head .x:hover{background:var(--line)}
+  .bk-head .x svg{width:18px;height:18px}
+  .bk-head h3{font-size:23px;letter-spacing:-.025em}
+  .bk-powered{display:inline-flex;align-items:center;gap:7px;margin-top:7px;font-size:12.5px;font-weight:600;color:var(--ink-3)}
+  .bk-powered .hl{display:inline-flex;align-items:center;gap:5px;color:var(--mint);font-weight:700}
+  .bk-powered .hl::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--mint)}
+  .bk-body{padding:22px 26px 26px;display:flex;flex-direction:column;gap:18px}
+  .bk-field label{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:-.01em}
+  .seg{display:flex;gap:8px}
+  .seg button{flex:1;padding:11px 0;border-radius:11px;font-weight:700;font-size:14px;background:var(--tint);color:var(--ink-2);box-shadow:inset 0 0 0 1.5px var(--line);transition:all .15s}
+  .seg button.on{background:var(--blue);color:#fff;box-shadow:none}
+  .bk select,.bk input{width:100%;font-family:inherit;font-size:15px;font-weight:500;color:var(--ink);padding:13px 14px;border-radius:12px;border:1.5px solid var(--line);background:#fff;outline:none;transition:border-color .15s,box-shadow .15s}
+  .bk select:focus,.bk input:focus{border-color:var(--blue);box-shadow:0 0 0 4px var(--blue-soft)}
+  .bk-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chips .chip2{padding:9px 15px;border-radius:100px;font-size:13.5px;font-weight:700;background:var(--tint);color:var(--ink-2);box-shadow:inset 0 0 0 1.5px var(--line);cursor:pointer;transition:all .15s}
+  .chips .chip2:hover{border-color:var(--blue)}
+  .chips .chip2.on{background:var(--blue);color:#fff;box-shadow:none}
+  .bk-slots{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+  .bk-slots .slot2{text-align:center;padding:11px 0;border-radius:11px;font-size:14px;font-weight:700;background:#fff;box-shadow:inset 0 0 0 1.5px var(--line);cursor:pointer;transition:all .15s}
+  .bk-slots .slot2:hover{border-color:var(--blue);color:var(--blue)}
+  .bk-slots .slot2.on{background:var(--blue);color:#fff;box-shadow:none}
+  .bk-foot{position:sticky;bottom:0;background:#fff;border-top:1px solid var(--line-2);padding:18px 26px;display:flex;align-items:center;justify-content:space-between;gap:14px}
+  .bk-secure{display:inline-flex;align-items:center;gap:7px;font-size:12px;font-weight:600;color:var(--ink-3);max-width:50%}
+  .bk-secure svg{width:15px;height:15px;color:var(--mint);flex-shrink:0}
+  .bk-foot .btn{flex-shrink:0}
+  /* confirmation state */
+  .bk-confirm{padding:34px 30px 30px;text-align:center}
+  .bk-confirm .seal{width:68px;height:68px;border-radius:50%;background:var(--mint-soft);color:#0c8f63;display:grid;place-items:center;margin:0 auto 18px}
+  .bk-confirm .seal svg{width:34px;height:34px}
+  .bk-confirm h3{font-size:24px;letter-spacing:-.025em}
+  .bk-confirm p{font-size:15px;color:var(--ink-2);font-weight:500;margin-top:10px;max-width:42ch;margin-left:auto;margin-right:auto}
+  .bk-summary{text-align:left;background:var(--tint);border:1px solid var(--line-2);border-radius:var(--r);padding:18px 20px;margin:22px 0;display:flex;flex-direction:column;gap:12px}
+  .bk-summary .r{display:flex;align-items:center;gap:12px;font-size:14.5px}
+  .bk-summary .r svg{width:18px;height:18px;color:var(--blue);flex-shrink:0}
+  .bk-summary .r b{font-weight:700}
+  .bk-summary .r span{color:var(--ink-2);font-weight:600}
+  .bk-confirm .actions{display:flex;flex-direction:column;gap:10px}
+  .bk-confirm .actions .btn{width:100%}
+  .bk-deeplink{font-size:11.5px;color:var(--ink-3);font-weight:500;word-break:break-all;margin-top:14px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:var(--tint);padding:10px 12px;border-radius:10px;border:1px solid var(--line-2)}
+  @media(max-width:560px){.bk-slots{grid-template-columns:repeat(3,1fr)}.bk-row{grid-template-columns:1fr}}
+
+  /* MOBILE NAV */
+  .mscrim{position:fixed;inset:0;background:rgba(12,27,42,.5);backdrop-filter:blur(3px);z-index:90;opacity:0;visibility:hidden;transition:opacity .25s}
+  .mscrim.on{opacity:1;visibility:visible}
+  .mnav{position:fixed;top:0;right:0;height:100%;width:min(340px,86vw);background:#fff;z-index:95;transform:translateX(100%);transition:transform .3s var(--ease);padding:20px 22px;display:flex;flex-direction:column;box-shadow:var(--sh-lg)}
+  .mnav.on{transform:translateX(0)}
+  .mnav-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+  .mnav-head .logo b{font-size:18px}
+  .mnav-links{display:flex;flex-direction:column;gap:2px;flex:1}
+  .mnav-links a{font-size:20px;font-weight:700;letter-spacing:-.02em;padding:13px 12px;border-radius:12px;transition:background .15s,color .15s}
+  .mnav-links a:hover{background:var(--blue-tint);color:var(--blue)}
+  .mnav-cta{display:flex;flex-direction:column;gap:10px;padding-top:18px;border-top:1px solid var(--line-2)}
+  .mnav-cta .btn{width:100%}
+
+  @media(max-width:980px){
+    .care-grid{grid-template-columns:repeat(2,1fr)}
+    .loc-layout{grid-template-columns:1fr;gap:32px}
+    .svc-grid{grid-template-columns:repeat(3,1fr)}
+    .why-grid{grid-template-columns:1fr;gap:36px}
+    .res-grid{grid-template-columns:repeat(2,1fr)}
+    .story-grid{grid-template-columns:repeat(2,1fr)}
+    .foot-top{grid-template-columns:1fr;gap:32px}
+  }
+  @media(max-width:560px){
+    section.block{padding:60px 0}
+    .care-grid,.svc-grid,.res-grid,.story-grid,.foot-cols{grid-template-columns:1fr}
+    .why-stats{grid-template-columns:1fr 1fr}
+    .care-card p{min-height:0}
+    .foot-cols{grid-template-columns:1fr 1fr}
+  }
+</style>
+
+<script>
+(function(){
+  var hdr=document.getElementById('hdr');
+  addEventListener('scroll',function(){hdr.classList.toggle('scrolled',scrollY>10)},{passive:true});
+
+  // mega menus
+  var items=document.querySelectorAll('.nav-links li[data-mega]');
+  items.forEach(function(li){
+    var t;
+    li.addEventListener('mouseenter',function(){clearTimeout(t);items.forEach(function(o){if(o!==li)o.classList.remove('open')});li.classList.add('open')});
+    li.addEventListener('mouseleave',function(){t=setTimeout(function(){li.classList.remove('open')},120)});
+    li.querySelector('button').addEventListener('click',function(e){e.preventDefault();li.classList.toggle('open')});
+  });
+  document.addEventListener('click',function(e){if(!e.target.closest('[data-mega]'))items.forEach(function(o){o.classList.remove('open')})});
+
+  // mobile nav
+  var mnav=document.getElementById('mnav'),scrim=document.getElementById('mscrim');
+  function openM(){mnav.classList.add('on');scrim.classList.add('on')}
+  function closeM(){mnav.classList.remove('on');scrim.classList.remove('on')}
+  document.getElementById('burger').addEventListener('click',openM);
+  document.getElementById('mclose').addEventListener('click',closeM);
+  scrim.addEventListener('click',closeM);
+  mnav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',closeM)});
+
+  // hero booking slot toggle
+  document.querySelectorAll('.bcard .slot').forEach(function(s){
+    s.addEventListener('click',function(){document.querySelectorAll('.bcard .slot').forEach(function(o){o.classList.remove('on')});s.classList.add('on')});
+  });
+
+  // CARE
+  var care=[
+    ["Primary Care","c-blue","In person","Well visits, sick visits & same-day care for children 0–21. Walk-ins welcome.",["Mon–Fri · 9AM–6PM","Walk-in & same-day"],"M3 12h4l2 5 4-12 2 7h6"],
+    ["Telehealth","c-mint","Video","Connect with your doctor by video call from home — 7 days a week, including evenings.",["Mon–Sat · 9AM–9PM","Sun · 12PM–6PM"],"rect"],
+    ["Urgent Care","c-rose","Fast","Immediate booking confirmation and shorter wait times for kids who need to be seen now.",["Immediate confirmation","Less waiting, ages 0–21"],"M12 2v20M2 12h20"],
+    ["After-Hours Care","c-amber","Evenings","Convenient evening & weekend hours for urgent needs, with full continuity of care.",["Evenings & weekends","Continuity of care"],"clock"],
+    ["Family Practice","c-violet","All ages","Quality, compassionate care for everyone in the family — not just the little ones.",["All ages welcome"],"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"],
+    ["Newborn & Delivery","c-blue","New parents","Delivering at a partner hospital? We'll arrange your pediatrician's first visit bedside.",["Hospital first visit"],"heart"]
+  ];
+  function cIcon(k){
+    if(k==='rect')return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="15" height="16" rx="2"/><path d="m17 9 5-3v12l-5-3"/></svg>';
+    if(k==='clock')return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+    if(k==='heart')return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 21s-7-4.35-7-10a4 4 0 0 1 7-2.65A4 4 0 0 1 19 11c0 5.65-7 10-7 10z"/></svg>';
+    return '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="'+k+'"/></svg>';
+  }
+  var clock='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+  document.getElementById('careGrid').innerHTML=care.map(function(c){
+    var meta=c[4].map(function(m){return '<li>'+clock+m+'</li>'}).join('');
+    return '<article class="care-card"><span class="chip '+c[1]+'">'+c[2]+'</span><span class="ico '+c[1]+'">'+cIcon(c[5])+'</span>'+
+      '<h3>'+c[0]+'</h3><p>'+c[3]+'</p><ul class="care-meta">'+meta+'</ul>'+
+      '<a class="care-link" href="#book">Book now <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>';
+  }).join('');
+
+  // SERVICES
+  var svcs=[["Well Child Exam","var(--blue)"],["Sick Visit","var(--rose)"],["Walk-Ins","var(--mint)"],["Same-Day Visit","var(--amber)"],["Physicals","var(--violet)"],["ADHD & Behavioral","var(--blue)"],["Adolescent Medicine","var(--rose)"],["Allergies","var(--mint)"],["Asthma & Allergy","var(--amber)"],["Autism & Special Needs","var(--violet)"],["Childhood Obesity","var(--blue)"],["COVID-19 Vaccine","var(--rose)"],["Expectant Parents","var(--mint)"],["Free Vaccines","var(--amber)"],["Newborn Care","var(--violet)"],["Nutrition","var(--blue)"],["Infectious Disease","var(--rose)"],["Sports Injuries","var(--mint)"],["Teen Gynecology","var(--amber)"],["Telehealth","var(--violet)"]];
+  document.getElementById('svcGrid').innerHTML=svcs.map(function(s){return '<a class="svc-chip" href="#"><span class="dot" style="background:'+s[1]+'"></span>'+s[0]+'</a>';}).join('');
+
+  // WHY stats
+  var ws=[["25","Clinics across Los Angeles"],["18+","Years caring for LA kids"],["0–21","Every age, infant to adult"],["7 days","Open every day of the week"]];
+  document.getElementById('whyStats').innerHTML=ws.map(function(s){return '<div class="why-stat"><b>'+s[0]+'</b><span>'+s[1]+'</span></div>';}).join('');
+
+  // RESOURCES
+  var res=[
+    ["Patient Portal","c-blue","Messages, results & records","M4 2h16v20H4zM9 7h6M9 11h6M9 15h4|rect"],
+    ["Pay Online","c-mint","Quick & secure billing"],
+    ["Vaccine Schedule","c-amber","Download immunization chart"],
+    ["Forms · Refills · Labs","c-violet","Sports policy & paperwork"],
+    ["Our Doctors","c-rose","Meet the medical team"],
+    ["Must-Watch Videos","c-blue","Learn from our experts"],
+    ["Referrals","c-mint","Specialist referral requests"],
+    ["Insurance","c-amber","We accept all insurance"]
+  ];
+  var rIcons=[
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>',
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M12 11v6M9 14h6"/></svg>',
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>',
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>',
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>',
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="m10 9 5 3-5 3z"/></svg>',
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>',
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>'
+  ];
+  document.getElementById('resGrid').innerHTML=res.map(function(r,i){
+    return '<a class="res-card" href="#"><span class="ico '+r[1]+'">'+rIcons[i]+'</span><h4>'+r[0]+'</h4><p>'+r[2]+'</p></a>';
+  }).join('');
+
+  // STORIES
+  var stories=[
+    ["Awareness","Celebrating Autism Awareness Month in Pediatric Care","April 5, 2024","https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?w=640&h=400&fit=crop&q=70"],
+    ["Asthma","Breathe Easy This Winter: Protecting Your Child from Asthma","December 13, 2023","https://images.unsplash.com/photo-1631815588090-d4bfec5b1ccb?w=640&h=400&fit=crop&q=70"],
+    ["Safety","Halloween Safety Tips Every Parent Should Know","October 21, 2023","https://images.unsplash.com/photo-1509557965875-b88c97052f0e?w=640&h=400&fit=crop&q=70"],
+    ["Guide","Pediatric ER vs. Urgent Care: What's the Difference?","August 23, 2023","https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=640&h=400&fit=crop&q=70"]
+  ];
+  document.getElementById('storyGrid').innerHTML=stories.map(function(s,i){
+    return '<a class="story-card" href="#"><div class="story-img"><img src="'+s[3]+'" alt="" loading="lazy" /></div><div class="sbody"><span class="tag">'+s[0]+'</span><h3>'+s[1]+'</h3><span class="date">'+s[2]+'</span></div></a>';
+  }).join('');
+
+  // LOCATIONS
+  var locs=[["Agoura Hills","5115 Clareton Dr, Ste 150"],["Arcadia","16 E Huntington Dr"],["Beverly Hills","8733 Beverly Blvd, #200"],["Canyon Country","20655 Soledad Canyon Rd #25"],["Culver City","3831 Hughes Ave, Ste 602"],["Downey","8201 4th St"],["Glendale","1530 E Chevy Chase Dr, Ste 202"],["Hollywood","5255 W Sunset Blvd"],["La Cañada","1021 Foothill Blvd"],["La Mirada","12675 La Mirada Blvd, #200"],["Mission Hills","10200 Sepulveda Blvd, Ste 220"],["Northridge","8628 Reseda Blvd"],["Pasadena","504 S Sierra Madre Blvd"],["Pico Rivera","8337 Telegraph Rd #119"],["San Fernando","777 Truman St, Ste 105"],["San Pedro","887 W 9th St"],["Santa Monica","2221 Lincoln Blvd #200"],["Tarzana","18372 Clark St Ste 226"],["Torrance","3524 Torrance Blvd, Ste 101"],["Valencia","24330 McBean Pkwy"],["Van Nuys","14426 Gilmore St"],["West Hills","7345 Medical Center Dr, #400"],["Whittier","13470 Telegraph Rd"]];
+  var list=document.getElementById('locList'),input=document.getElementById('locInput'),count=document.getElementById('locCount');
+  var pin='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+  var arr='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg>';
+  function render(q){
+    q=(q||'').toLowerCase().trim();
+    var f=locs.filter(function(l){return !q||l[0].toLowerCase().includes(q)||l[1].toLowerCase().includes(q)});
+    count.textContent=f.length;
+    if(!f.length){list.innerHTML='<div class="loc-empty">No clinics match “'+q+'.” Try another city.</div>';return}
+    list.innerHTML=f.map(function(l){return '<a class="loc-item" href="Location.html?loc='+encodeURIComponent(l[0])+'"><span class="pin">'+pin+'</span><span><h4>'+l[0]+'</h4><p>'+l[1]+'</p></span><span class="arr">'+arr+'</span></a>';}).join('');
+  }
+  render('');
+  input.addEventListener('input',function(){render(this.value)});
+
+  /* ============================================================
+     KT — eClinicalWorks / healow integration config
+     ────────────────────────────────────────────────────────────
+     SINGLE SOURCE OF TRUTH. Replace the URLs below with Kids &
+     Teens' real healow practice endpoints and the whole site is
+     wired. (In the React build these become env vars.)
+     ============================================================ */
+  var KT = {
+    healowOpenAccess: 'https://healow.com/apps/practice/kids-and-teens-medical-group',  // ⟵ real healow Open Access self-scheduling URL
+    patientPortal:    'https://healow.com/apps/jsp/webview/index.jsp',                  // ⟵ eCW Patient Portal login
+    payOnline:        'https://healow.com/apps/jsp/webview/index.jsp',                  // ⟵ online bill pay
+    findDoctor:       'https://healow.com/apps/jsp/webview/index.jsp',                  // ⟵ healow provider search
+    medRefills:       'https://healow.com/apps/jsp/webview/index.jsp',
+    labResults:       'https://healow.com/apps/jsp/webview/index.jsp',
+    referrals:        'https://healow.com/apps/jsp/webview/index.jsp',
+    practiceCode:     'KTMGLA',
+    phone:   '+18183615437',
+    textEN:  '+16262987121',
+    textES:  '+18184235637'
+  };
+  // Build a healow Open Access deep-link carrying the visit context.
+  function healowURL(ctx){
+    var p=[];
+    if(ctx.reason)   p.push('reason='+encodeURIComponent(ctx.reason));
+    if(ctx.location) p.push('location='+encodeURIComponent(ctx.location));
+    if(ctx.patient)  p.push('patient_type='+encodeURIComponent(ctx.patient));
+    if(ctx.day)      p.push('day='+encodeURIComponent(ctx.day));
+    if(ctx.time)     p.push('time='+encodeURIComponent(ctx.time));
+    p.push('practice='+KT.practiceCode);
+    return KT.healowOpenAccess+(p.length?'?'+p.join('&'):'');
+  }
+  function ext(a,url){ if(!a)return; a.setAttribute('href',url); a.setAttribute('target','_blank'); a.setAttribute('rel','noopener'); }
+
+  /* ---- wire the always-on integration links ---- */
+  // utility strip + footer "Patient Portal" / "Pay Online"
+  document.querySelectorAll('a').forEach(function(a){
+    var t=(a.textContent||'').trim().toLowerCase();
+    if(t==='patient portal') ext(a,KT.patientPortal);
+    else if(t==='pay online') ext(a,KT.payOnline);
+    else if(t==='find a doctor') ext(a,KT.findDoctor);
+  });
+
+  /* ============================================================
+     BOOKING MODAL — healow Open Access style handoff
+     ============================================================ */
+  var bkScrim=document.getElementById('bkScrim');
+  var bkReason=document.getElementById('bkReason'), bkLoc=document.getElementById('bkLoc'), bkSlots=document.getElementById('bkSlots');
+  var bkForm=document.getElementById('bkForm'), bkDone=document.getElementById('bkDone');
+  var state={patient:'New patient',reason:'',location:'',day:'Today',time:''};
+
+  // populate reason (care types + services) and location selects
+  var reasons=care.map(function(c){return c[0]}).concat(svcs.map(function(s){return s[0]})).filter(function(v,i,a){return a.indexOf(v)===i});
+  bkReason.innerHTML=reasons.map(function(r){return '<option>'+r+'</option>'}).join('');
+  bkLoc.innerHTML='<option value="">Choose a clinic…</option>'+locs.map(function(l){return '<option>'+l[0]+'</option>'}).join('');
+  var slotTimes=['8:40 AM','9:20 AM','10:10 AM','11:30 AM','1:20 PM','2:40 PM','3:10 PM','4:30 PM'];
+  bkSlots.innerHTML=slotTimes.map(function(t,i){return '<span class="slot2'+(i===5?' on':'')+'" data-v="'+t+'">'+t+'</span>'}).join('');
+  state.time='2:40 PM';
+
+  function syncFields(){
+    bkReason.value=state.reason||reasons[0];
+    bkLoc.value=state.location||'';
+    document.querySelectorAll('#bkPatient button').forEach(function(b){b.classList.toggle('on',b.dataset.v===state.patient)});
+    document.querySelectorAll('#bkDay .chip2').forEach(function(c){c.classList.toggle('on',c.dataset.v===state.day)});
+    document.querySelectorAll('#bkSlots .slot2').forEach(function(s){s.classList.toggle('on',s.dataset.v===state.time)});
+  }
+  function openBook(ctx){
+    ctx=ctx||{};
+    if(ctx.reason) state.reason=ctx.reason;
+    if(ctx.location) state.location=ctx.location;
+    if(ctx.time) state.time=ctx.time;
+    bkForm.style.display='';bkDone.style.display='none';
+    syncFields();
+    bkScrim.classList.add('on');document.body.style.overflow='hidden';
+  }
+  function closeBook(){bkScrim.classList.remove('on');document.body.style.overflow=''}
+  window.ktOpenBook=openBook;
+
+  document.getElementById('bkClose').addEventListener('click',closeBook);
+  bkScrim.addEventListener('click',function(e){if(e.target===bkScrim)closeBook()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&bkScrim.classList.contains('on'))closeBook()});
+
+  document.getElementById('bkPatient').addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;state.patient=b.dataset.v;syncFields()});
+  document.getElementById('bkDay').addEventListener('click',function(e){var c=e.target.closest('.chip2');if(!c)return;state.day=c.dataset.v;syncFields()});
+  bkSlots.addEventListener('click',function(e){var s=e.target.closest('.slot2');if(!s)return;state.time=s.dataset.v;syncFields()});
+  bkReason.addEventListener('change',function(){state.reason=this.value});
+  bkLoc.addEventListener('change',function(){state.location=this.value});
+
+  // submit → confirmation + handoff
+  document.getElementById('bkSubmit').addEventListener('click',function(){
+    state.reason=bkReason.value;state.location=bkLoc.value;
+    var name=document.getElementById('bkName').value.trim();
+    var loc=state.location||'Nearest clinic';
+    var pin='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>';
+    var cal='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>';
+    var stt='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+    var per='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>';
+    document.getElementById('bkSummary').innerHTML=
+      '<div class="r">'+per+'<span><b>'+state.reason+'</b> · '+state.patient+(name?' · '+name:'')+'</span></div>'+
+      '<div class="r">'+pin+'<span>'+loc+'</span></div>'+
+      '<div class="r">'+cal+'<span>'+state.day+'</span></div>'+
+      '<div class="r">'+stt+'<span>'+state.time+'</span></div>';
+    var url=healowURL(state);
+    ext(document.getElementById('bkGo'),url);
+    document.getElementById('bkLink').textContent=url;
+    bkForm.style.display='none';bkDone.style.display='';
+    bkScrim.querySelector('.bk').scrollTop=0;
+  });
+  document.getElementById('bkBack').addEventListener('click',function(){bkForm.style.display='';bkDone.style.display='none'});
+
+  /* ---- every booking entry point → healow Open Access (no popup) ---- */
+  // static "Book" buttons (nav, hero, mobile, CTA band, book card, location page)
+  document.querySelectorAll('a[href="#book"], #book .btn-light, #book .btn-primary').forEach(function(a){ ext(a, healowURL({})); });
+  // hero widget time slots → healow w/ Tarzana + chosen time
+  document.querySelectorAll('.bcard .slot').forEach(function(s){
+    s.addEventListener('click',function(){ window.open(healowURL({location:'Tarzana',time:s.textContent.trim()}),'_blank','noopener'); });
+  });
+  // care "Book now" links → healow w/ that care type
+  document.querySelectorAll('.care-card .care-link').forEach(function(a){
+    var card=a.closest('.care-card'); ext(a, healowURL({reason:card.querySelector('h3').textContent}));
+  });
+  // service chips → healow w/ that service
+  document.querySelectorAll('.svc-chip').forEach(function(a){ ext(a, healowURL({reason:a.textContent.trim()})); });
+
+  /* ---- resource cards → correct healow / portal destinations ---- */
+  document.querySelectorAll('#resGrid .res-card').forEach(function(card){
+    var t=(card.querySelector('h4').textContent||'').toLowerCase();
+    if(t.indexOf('portal')>-1) ext(card,KT.patientPortal);
+    else if(t.indexOf('pay')>-1) ext(card,KT.payOnline);
+    else if(t.indexOf('doctor')>-1) ext(card,KT.findDoctor);
+    else if(t.indexOf('referral')>-1) ext(card,KT.referrals);
+    else if(t.indexOf('forms')>-1||t.indexOf('refill')>-1||t.indexOf('lab')>-1) ext(card,KT.medRefills);
+  });
+  // quick-action + provider cards → healow provider search
+  document.querySelectorAll('a.qcard[href="#providers"]').forEach(function(a){ext(a,KT.findDoctor)});
+})();
+</script>
+
+<!-- ===== TWEAKS: expressive feel controls ===== -->
+<style id="tweak-feel">
+  /* --- Personality: Clinical (sharp, monochrome, restrained) --- */
+  html[data-personality="clinical"]{
+    --r-sm:6px; --r:9px; --r-lg:12px; --r-xl:16px;
+    --sh-sm:0 1px 2px rgba(20,50,90,.05);
+    --sh:0 3px 10px rgba(20,50,90,.06);
+    --sh-lg:0 12px 32px rgba(20,50,90,.10), 0 4px 10px rgba(20,50,90,.05);
+  }
+  html[data-personality="clinical"] .btn{border-radius:9px}
+  html[data-personality="clinical"] .eyebrow{border-radius:6px}
+  html[data-personality="clinical"] .lang,
+  html[data-personality="clinical"] .float,
+  html[data-personality="clinical"] .chips .chip2,
+  html[data-personality="clinical"] .seg button{border-radius:8px}
+  /* collapse the rainbow icon tiles into one calm clinical blue */
+  html[data-personality="clinical"] .c-mint,
+  html[data-personality="clinical"] .c-amber,
+  html[data-personality="clinical"] .c-violet,
+  html[data-personality="clinical"] .c-rose{background:var(--blue-soft);color:var(--blue-deep)}
+  html[data-personality="clinical"] .svc-chip .dot{background:var(--blue)!important}
+  html[data-personality="clinical"] .story-img{filter:saturate(.55)}
+
+  /* --- Personality: Playful (round, vivid, bouncy) --- */
+  html[data-personality="playful"]{
+    --r-sm:14px; --r:20px; --r-lg:30px; --r-xl:42px;
+    --sh:0 10px 30px rgba(20,50,90,.10), 0 3px 8px rgba(20,50,90,.06);
+    --sh-lg:0 34px 72px rgba(20,50,90,.18), 0 10px 24px rgba(20,50,90,.08);
+  }
+  html[data-personality="playful"] .care-card .ico,
+  html[data-personality="playful"] .qcard .ico,
+  html[data-personality="playful"] .res-card .ico,
+  html[data-personality="playful"] .mega-item .ico{border-radius:50%}
+  html[data-personality="playful"] .c-blue,
+  html[data-personality="playful"] .c-mint,
+  html[data-personality="playful"] .c-amber,
+  html[data-personality="playful"] .c-violet,
+  html[data-personality="playful"] .c-rose{filter:saturate(1.2)}
+  html[data-personality="playful"] .care-card:hover,
+  html[data-personality="playful"] .qcard:hover,
+  html[data-personality="playful"] .story-card:hover{transform:translateY(-8px) scale(1.012)}
+
+  /* --- Hero image treatment --- */
+  .visual .hero-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;opacity:0;transition:opacity .25s var(--ease)}
+  html[data-hero="duotone"] .hero-img{filter:grayscale(1) contrast(1.04)}
+  html[data-hero="duotone"] .hero-overlay{opacity:1;background:var(--blue);mix-blend-mode:color}
+  html[data-hero="bright"] .hero-img{filter:saturate(1.28) brightness(1.05) contrast(1.02)}
+  html[data-hero="soft"] .hero-img{filter:saturate(.92) brightness(1.04)}
+  html[data-hero="soft"] .hero-overlay{opacity:1;background:linear-gradient(180deg,transparent 40%,rgba(12,27,42,.28))}
+
+  /* --- Roominess --- */
+  html[data-room="cozy"] section.block{padding:54px 0}
+  html[data-room="cozy"] .hero .wrap{padding-top:40px;padding-bottom:44px}
+  html[data-room="cozy"] .care-grid,
+  html[data-room="cozy"] .svc-grid,
+  html[data-room="cozy"] .res-grid,
+  html[data-room="cozy"] .story-grid{gap:12px;margin-top:34px}
+  html[data-room="cozy"] .quick-grid{gap:12px}
+
+  html[data-room="spacious"] section.block{padding:120px 0}
+  html[data-room="spacious"] .hero .wrap{padding-top:84px;padding-bottom:100px}
+  html[data-room="spacious"] .care-grid,
+  html[data-room="spacious"] .svc-grid,
+  html[data-room="spacious"] .res-grid,
+  html[data-room="spacious"] .story-grid{gap:26px;margin-top:58px}
+  html[data-room="spacious"] .quick-grid{gap:26px}
+  html[data-room="spacious"] .sec-head{margin-bottom:8px}
+
+  /* ===== panel ===== */
+  .twk{position:fixed;right:18px;bottom:18px;z-index:120;width:286px;
+    background:rgba(255,255,255,.82);-webkit-backdrop-filter:blur(22px) saturate(160%);backdrop-filter:blur(22px) saturate(160%);
+    border:1px solid rgba(255,255,255,.7);border-radius:18px;
+    box-shadow:0 1px 0 rgba(255,255,255,.6) inset,0 18px 50px rgba(12,27,42,.22);
+    font-family:"Hanken Grotesk",system-ui,sans-serif;color:var(--ink);
+    opacity:0;visibility:hidden;transform:translateY(12px) scale(.98);transition:opacity .2s var(--ease),transform .2s var(--ease)}
+  .twk.on{opacity:1;visibility:visible;transform:none}
+  .twk-hd{display:flex;align-items:center;justify-content:space-between;padding:14px 12px 12px 17px;cursor:move;user-select:none}
+  .twk-hd b{font-size:13.5px;font-weight:800;letter-spacing:-.01em}
+  .twk-hd .badge{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--blue-soft);padding:3px 8px;border-radius:100px;margin-left:8px}
+  .twk-x{width:26px;height:26px;border-radius:8px;display:grid;place-items:center;color:var(--ink-3);transition:background .15s}
+  .twk-x:hover{background:rgba(12,27,42,.07);color:var(--ink)}
+  .twk-x svg{width:15px;height:15px}
+  .twk-bd{padding:4px 17px 18px;display:flex;flex-direction:column;gap:16px}
+  .twk-f label{display:block;font-size:11.5px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
+  .twk-f .hint{font-size:11.5px;font-weight:600;color:var(--ink-3);text-transform:none;letter-spacing:0;margin-top:6px;line-height:1.35}
+  .twk-seg{display:flex;gap:3px;background:rgba(12,27,42,.06);border-radius:11px;padding:3px}
+  .twk-seg button{flex:1;padding:8px 4px;border-radius:8px;font-family:inherit;font-size:12.5px;font-weight:700;color:var(--ink-2);transition:all .15s}
+  .twk-seg button.on{background:#fff;color:var(--blue);box-shadow:0 1px 3px rgba(12,27,42,.12)}
+  .twk-sw{display:flex;gap:9px}
+  .twk-sw button{flex:1;height:42px;border-radius:11px;position:relative;box-shadow:inset 0 0 0 1px rgba(12,27,42,.08);transition:transform .14s var(--ease)}
+  .twk-sw button:hover{transform:translateY(-2px)}
+  .twk-sw button.on{box-shadow:0 0 0 2.5px #fff,0 0 0 4.5px currentColor}
+  .twk-sw button svg{position:absolute;inset:0;margin:auto;width:17px;height:17px;color:#fff;opacity:0;transition:opacity .15s}
+  .twk-sw button.on svg{opacity:1}
+</style>
+
+<aside class="twk" id="twk" aria-label="Tweaks">
+  <div class="twk-hd" id="twkHd">
+    <b>Tweaks<span class="badge">Feel</span></b>
+    <button class="twk-x" id="twkClose" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="twk-bd">
+    <div class="twk-f">
+      <label>Brand accent</label>
+      <div class="twk-sw" id="twkAccent"></div>
+    </div>
+    <div class="twk-f">
+      <label>Hero image</label>
+      <div class="twk-seg" id="twkHero">
+        <button data-v="natural">Natural</button>
+        <button data-v="bright">Bright</button>
+        <button data-v="duotone">Duotone</button>
+        <button data-v="soft">Soft</button>
+      </div>
+    </div>
+    <div class="twk-f">
+      <label>Personality</label>
+      <div class="twk-seg" id="twkPersona">
+        <button data-v="clinical">Clinical</button>
+        <button data-v="friendly">Friendly</button>
+        <button data-v="playful">Playful</button>
+      </div>
+      <div class="hint" id="twkPersonaHint"></div>
+    </div>
+    <div class="twk-f">
+      <label>Roominess</label>
+      <div class="twk-seg" id="twkRoom">
+        <button data-v="cozy">Cozy</button>
+        <button data-v="default">Default</button>
+        <button data-v="spacious">Spacious</button>
+      </div>
+    </div>
+  </div>
+</aside>
+
+<script>
+(function(){
+  var TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+    "accent": "blue",
+    "hero": "natural",
+    "personality": "friendly",
+    "roominess": "cozy"
+  }/*EDITMODE-END*/;
+
+  // Four palette options from the brand color exploration.
+  var ACCENTS={
+    blue:  {label:'Healthcare Blue · recommended', c:'#2563EB', d:'#1D4ED8', s:'#dbeafe', t:'#eff6ff', g:'37,99,235'},
+    navy:  {label:'Navy + Sky Blue',               c:'#1E3A8A', d:'#172e6e', s:'#dbeafe', t:'#eef3fb', g:'30,58,138'},
+    teal:  {label:'Blue + Teal · healthcare',      c:'#14B8A6', d:'#0f9488', s:'#ccfbf1', t:'#f0fdfa', g:'20,184,166'},
+    violet:{label:'Blue + Purple · modern',        c:'#7C3AED', d:'#6d28d9', s:'#ede9fe', t:'#f5f3ff', g:'124,58,237'}
+  };
+  var PERSONA_HINT={
+    clinical:'Sharp corners, calm monochrome, restrained shadows — reads like trusted medical software.',
+    friendly:'The balanced house style: rounded cards, a warm multi-color accent system.',
+    playful:'Pill-round tiles, vivid color and lively motion — bright and kid-forward.'
+  };
+  var t=Object.assign({},TWEAK_DEFAULTS);
+  var root=document.documentElement;
+
+  function apply(){
+    var a=ACCENTS[t.accent]||ACCENTS.blue;
+    root.style.setProperty('--blue',a.c);
+    root.style.setProperty('--blue-deep',a.d);
+    root.style.setProperty('--blue-soft',a.s);
+    root.style.setProperty('--blue-tint',a.t);
+    root.style.setProperty('--glow','rgba('+a.g+',.28)');
+    root.style.setProperty('--glow-strong','rgba('+a.g+',.40)');
+    root.setAttribute('data-hero',t.hero);
+    root.setAttribute('data-personality',t.personality);
+    root.setAttribute('data-room',t.roominess);
+    // reflect active states in the panel
+    document.querySelectorAll('#twkAccent button').forEach(function(b){b.classList.toggle('on',b.dataset.v===t.accent)});
+    document.querySelectorAll('#twkHero button').forEach(function(b){b.classList.toggle('on',b.dataset.v===t.hero)});
+    document.querySelectorAll('#twkPersona button').forEach(function(b){b.classList.toggle('on',b.dataset.v===t.personality)});
+    document.querySelectorAll('#twkRoom button').forEach(function(b){b.classList.toggle('on',b.dataset.v===t.roominess)});
+    var hint=document.getElementById('twkPersonaHint');if(hint)hint.textContent=PERSONA_HINT[t.personality]||'';
+  }
+  function setTweak(k,v){
+    t[k]=v;apply();
+    window.parent.postMessage({type:'__edit_mode_set_keys',edits:{[k]:v}},'*');
+  }
+
+  // build accent swatches
+  var check='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M20 6 9 17l-5-5"/></svg>';
+  document.getElementById('twkAccent').innerHTML=Object.keys(ACCENTS).map(function(k){
+    var a=ACCENTS[k];
+    return '<button data-v="'+k+'" title="'+a.label+'" style="background:'+a.c+';color:'+a.c+'">'+check+'</button>';
+  }).join('');
+
+  document.getElementById('twkAccent').addEventListener('click',function(e){var b=e.target.closest('button');if(b)setTweak('accent',b.dataset.v)});
+  document.getElementById('twkHero').addEventListener('click',function(e){var b=e.target.closest('button');if(b)setTweak('hero',b.dataset.v)});
+  document.getElementById('twkPersona').addEventListener('click',function(e){var b=e.target.closest('button');if(b)setTweak('personality',b.dataset.v)});
+  document.getElementById('twkRoom').addEventListener('click',function(e){var b=e.target.closest('button');if(b)setTweak('roominess',b.dataset.v)});
+
+  apply();
+
+  // ── host protocol ──
+  var panel=document.getElementById('twk');
+  function show(){panel.classList.add('on')}
+  function hide(){panel.classList.remove('on')}
+  window.addEventListener('message',function(e){
+    var ty=e&&e.data&&e.data.type;
+    if(ty==='__activate_edit_mode')show();
+    else if(ty==='__deactivate_edit_mode')hide();
+  });
+  window.parent.postMessage({type:'__edit_mode_available'},'*');
+  document.getElementById('twkClose').addEventListener('click',function(){hide();window.parent.postMessage({type:'__edit_mode_dismissed'},'*')});
+
+  // draggable
+  var hd=document.getElementById('twkHd'),drag=false,sx,sy,ox,oy;
+  hd.addEventListener('pointerdown',function(e){
+    if(e.target.closest('.twk-x'))return;
+    drag=true;sx=e.clientX;sy=e.clientY;
+    var r=panel.getBoundingClientRect();ox=r.left;oy=r.top;
+    hd.setPointerCapture(e.pointerId);
+  });
+  hd.addEventListener('pointermove',function(e){
+    if(!drag)return;
+    var nx=ox+(e.clientX-sx),ny=oy+(e.clientY-sy);
+    nx=Math.max(8,Math.min(window.innerWidth-panel.offsetWidth-8,nx));
+    ny=Math.max(8,Math.min(window.innerHeight-panel.offsetHeight-8,ny));
+    panel.style.left=nx+'px';panel.style.top=ny+'px';panel.style.right='auto';panel.style.bottom='auto';
+  });
+  hd.addEventListener('pointerup',function(){drag=false});
+})();
+</script>
+
+<template id="__bundler_thumbnail" data-bg-color="#2563EB">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#2563EB"/>
+    <rect x="430" y="250" width="340" height="340" rx="86" fill="#ffffff"/>
+    <text x="600" y="470" font-family="Hanken Grotesk, Arial, sans-serif" font-size="150" font-weight="800" fill="#2563EB" text-anchor="middle">K&amp;T</text>
+  </svg>
+</template>
+
+</body>
+</html>
