@@ -66,18 +66,17 @@ export default function Hero() {
           </div>
         </div>
         <div className="visual">
-          {/* Primary: a local hero at /public/hero.jpg (doctor talking with a
-              child). If that file isn't present yet, fall through to pediatric
-              stock photos so the hero never renders broken. */}
+          {/* Doctor high-fiving a child in a clinic. The primary src is a real
+              URL so it renders server-side (no JS needed) — the onError chain is
+              only a safety net for runtime load failures. To use your own image,
+              swap this src for "/hero.jpg" after adding the file to /public. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="hero-img"
-            src="/hero.jpg"
+            src="https://images.unsplash.com/photo-1708687045030-26702e62fc65?w=1000&h=1100&fit=crop&q=70"
             onError={(e) => {
               const img = e.currentTarget;
               const fallbacks = [
-                // doctor high-fiving a child in a clinic
-                "https://images.unsplash.com/photo-1708687045030-26702e62fc65?w=1000&h=1100&fit=crop&q=70",
                 // doctor examining a young boy with his mother present
                 "https://images.unsplash.com/photo-1758691463331-2ac00e6f676f?w=1000&h=1100&fit=crop&q=70",
                 "https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=1000&h=1100&fit=crop&q=70",
