@@ -6,6 +6,7 @@ import { KT, HEALOW_URL } from "@/lib/config";
 import { services, PATIENT_RESOURCES } from "@/lib/data";
 import { useLang, tr } from "./LanguageProvider";
 import { ChevronDown, MenuIcon, CloseIcon, CareIcon } from "./icons";
+import Logo from "./Logo";
 
 const careMega = [
   { title: "Primary Care", titleEs: "Atención Primaria", sub: "Well & sick visits, ages 0–21", subEs: "Chequeos y enfermedad, 0–21", color: "c-blue", icon: "M3 12h4l2 5 4-12 2 7h6" },
@@ -60,8 +61,13 @@ export default function SiteHeader() {
         <div className="wrap">
           <nav className="nav">
             <Link className="logo" href="/">
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/logo.png" alt="Kids & Teens Medical Group" className="logo-img" />
+              <Logo imgClassName="logo-img">
+                <span className="m">K&amp;T</span>
+                <span>
+                  <b>Kids &amp; Teens</b>
+                  <small>Medical Group · Los Angeles</small>
+                </span>
+              </Logo>
             </Link>
             <ul className="nav-links" id="navlinks" ref={navRef}>
               <li
@@ -190,8 +196,10 @@ export default function SiteHeader() {
       <aside className={"mnav" + (drawer ? " on" : "")} aria-hidden={!drawer}>
         <div className="mnav-head">
           <Link className="logo" href="/" onClick={() => setDrawer(false)}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/logo.png" alt="Kids & Teens Medical Group" className="logo-img" />
+            <Logo imgClassName="logo-img">
+              <span className="m">K&amp;T</span>
+              <b>Kids &amp; Teens</b>
+            </Logo>
           </Link>
           <button className="burger" aria-label="Close" onClick={() => setDrawer(false)}>
             <CloseIcon />
