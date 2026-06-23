@@ -66,24 +66,32 @@ export default function Hero() {
           </div>
         </div>
         <div className="visual">
-          {/* EHR / healthcare-software themed hero, with a fallback if the
-              primary image fails to load. eslint-disable for plain <img>. */}
+          {/* Primary: a local hero at /public/hero.jpg (doctor talking with a
+              child). If that file isn't present yet, fall through to pediatric
+              stock photos so the hero never renders broken. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             className="hero-img"
-            src="https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=1000&h=1100&fit=crop&q=70"
+            src="/hero.jpg"
             onError={(e) => {
               const img = e.currentTarget;
-              if (!img.dataset.fallback) {
-                img.dataset.fallback = "1";
-                img.src =
-                  "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=1000&h=1100&fit=crop&q=70";
+              const fallbacks = [
+                // doctor high-fiving a child in a clinic
+                "https://images.unsplash.com/photo-1708687045030-26702e62fc65?w=1000&h=1100&fit=crop&q=70",
+                // doctor examining a young boy with his mother present
+                "https://images.unsplash.com/photo-1758691463331-2ac00e6f676f?w=1000&h=1100&fit=crop&q=70",
+                "https://images.unsplash.com/photo-1581056771107-24ca5f033842?w=1000&h=1100&fit=crop&q=70",
+              ];
+              const step = Number(img.dataset.fb || 0);
+              if (step < fallbacks.length) {
+                img.dataset.fb = String(step + 1);
+                img.src = fallbacks[step];
               }
             }}
             alt={tr(
               lang,
-              "Doctor talking with a patient in the office at Kids & Teens",
-              "Médico conversando con un paciente en el consultorio de Kids & Teens"
+              "Doctor talking with a child at Kids & Teens",
+              "Médico conversando con un niño en Kids & Teens"
             )}
           />
           <div className="float">

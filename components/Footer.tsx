@@ -22,11 +22,8 @@ export default function Footer() {
         <div className="foot-top">
           <div className="foot-brand">
             <Link className="logo" href="/">
-              <span className="m">K&amp;T</span>
-              <span>
-                <b style={{ color: "#fff" }}>Kids &amp; Teens</b>
-                <small style={{ color: "rgba(255,255,255,.5)" }}>Medical Group · Los Angeles</small>
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="Kids & Teens Medical Group" className="logo-img logo-img-foot" />
             </Link>
             <p>
               {tr(

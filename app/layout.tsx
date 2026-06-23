@@ -14,11 +14,17 @@ export const metadata: Metadata = {
   title: "Kids & Teens Medical Group — Pediatric Care, Simplified",
   description:
     "Same-day visits, telehealth, and 25 clinics across Los Angeles — pediatric care for ages 0–21, built around how your family really lives.",
+  icons: {
+    icon: "/logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
+  },
   openGraph: {
     title: "Kids & Teens Medical Group — Pediatric Care, Simplified",
     description:
       "Same-day visits, telehealth, and 25 clinics across Los Angeles — pediatric care for ages 0–21.",
     type: "website",
+    images: ["/logo.png"],
   },
 };
 

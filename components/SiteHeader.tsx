@@ -60,11 +60,8 @@ export default function SiteHeader() {
         <div className="wrap">
           <nav className="nav">
             <Link className="logo" href="/">
-              <span className="m">K&amp;T</span>
-              <span>
-                <b>Kids &amp; Teens</b>
-                <small>Medical Group · Los Angeles</small>
-              </span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/logo.png" alt="Kids & Teens Medical Group" className="logo-img" />
             </Link>
             <ul className="nav-links" id="navlinks" ref={navRef}>
               <li
@@ -193,8 +190,8 @@ export default function SiteHeader() {
       <aside className={"mnav" + (drawer ? " on" : "")} aria-hidden={!drawer}>
         <div className="mnav-head">
           <Link className="logo" href="/" onClick={() => setDrawer(false)}>
-            <span className="m">K&amp;T</span>
-            <b>Kids &amp; Teens</b>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img src="/logo.png" alt="Kids & Teens Medical Group" className="logo-img" />
           </Link>
           <button className="burger" aria-label="Close" onClick={() => setDrawer(false)}>
             <CloseIcon />
